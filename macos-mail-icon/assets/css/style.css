@@ -1,0 +1,269 @@
+/* Mail Icon Styles */
+:root {
+    --icon-size: 512px;
+    --icon-gradient-start: #0C0F43;
+    --icon-gradient-end: #221C69;
+    --mail-gradient-start: #3486F4;
+    --mail-gradient-end: #2AD1FB;
+    --envelope-white-start: #FFFFFF;
+    --envelope-white-mid: #F9F7FA;
+    --envelope-white-mid2: #F7F7F7;
+    --envelope-white-end: #E5E5E5;
+    --fold-gray-start: #B6B6B6;
+    --fold-gray-mid: #AFAFAF;
+    --fold-gray-end: #B7B7B7;
+    --fold-bottom-start: #E0E4E7;
+    --fold-bottom-end: #CDCBCC;
+    --fold-main-start: #FCFDFF;
+    --fold-main-end: #F7F5F8;
+    --line-height: calc(var(--icon-size) * 0.4375);
+    --line-width: calc(var(--icon-size) * 0.0078125);
+    --heading-primary-size: 80px;
+    --heading-secondary-size: 63.628px;
+    --credits-size: 24px;
+}
+
+body {
+    background: radial-gradient(71.45% 71.45% at 50% 0%, var(--icon-gradient-start), var(--icon-gradient-end));
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0;
+    max-width: 1440px;
+}
+
+.content-wrapper {
+    padding: 100px 120px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.row {
+    margin: 0;
+    align-items: center;
+}
+
+/* Left Component Structure */
+.left-component {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.heading-group, .subheading-group {
+    width: 100%;
+}
+
+/* Text Content - Left Side */
+.text-content {
+    text-align: left;
+}
+
+h1, h2 {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.display-4 {
+    font-size: var(--heading-primary-size);
+    color: #F5F5F7;
+    line-height: 1.193359375;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+}
+
+h2.h1 {
+    font-size: var(--heading-secondary-size);
+    line-height: 1.193359375;
+    background: linear-gradient(180deg, #4A97F7 0%, #4A97F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Icon Column - Right Side */
+.icon-column {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* Icon Container and SVG */
+.mail-icon-container {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin: 0;
+    position: relative;
+    border-radius: 120px;
+}
+
+/* Icon Background Elements */
+.icon-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 120px;
+    background: #000;
+    opacity: 0.3;
+    filter: blur(16px);
+    z-index: 1;
+}
+
+.icon-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 120px;
+    background: linear-gradient(180deg, var(--mail-gradient-start) 0%, var(--mail-gradient-end) 100%);
+    box-shadow: 0 64px 180px rgba(51, 141, 245, 0.8);
+    z-index: 2;
+}
+
+.mail-svg-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 3;
+    top: 45px;
+}
+
+/* Footer Credits */
+.footer-credits {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.credits {
+    font-size: var(--credits-size);
+    line-height: 1.193359375;
+    margin: 0;
+    color: #4A97F7;
+    opacity: 0.8;
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.credits .separator {
+    margin: 0 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1280px) {
+    :root {
+        --icon-size: 450px;
+        --heading-primary-size: 70px;
+        --heading-secondary-size: 54px;
+    }
+    
+    .content-wrapper {
+        padding: 80px 100px;
+    }
+    
+    .text-content {
+        padding-right: 60px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --icon-size: 400px;
+        --heading-primary-size: 60px;
+        --heading-secondary-size: 48px;
+        --credits-size: 22px;
+    }
+    
+    .content-wrapper {
+        padding: 60px 80px;
+    }
+    
+    .text-content {
+        padding-right: 40px;
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --icon-size: 320px;
+        --heading-primary-size: 48px;
+        --heading-secondary-size: 38px;
+        --credits-size: 20px;
+    }
+    
+    .content-wrapper {
+        padding: 40px 20px;
+        height: auto;
+    }
+    
+    .row {
+        flex-direction: column-reverse;
+    }
+    
+    .text-content {
+        text-align: center;
+        padding-right: 0;
+        margin-top: 40px;
+        padding-top: 0;
+    }
+    
+    .left-component {
+        align-items: center;
+    }
+    
+    .icon-column {
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    
+    .footer-credits {
+        position: relative;
+        bottom: auto;
+        margin-top: 60px;
+    }
+    
+    .display-4 {
+        margin-bottom: 0;
+    }
+    
+    .credits .separator {
+        margin: 0 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --icon-size: 256px;
+        --heading-primary-size: 40px;
+        --heading-secondary-size: 32px;
+        --credits-size: 18px;
+    }
+    
+    .content-wrapper {
+        padding: 30px 15px;
+    }
+    
+    .left-component {
+        gap: 4px;
+    }
+} 
